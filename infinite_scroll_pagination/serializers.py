@@ -22,7 +22,7 @@ def _make_aware_maybe(dt):
         return dt
     if django_timezone.is_aware(dt):
         return dt.astimezone(timezone.utc)
-    return timezone.make_aware(dt, timezone=timezone.utc)
+    return django_timezone.make_aware(dt, timezone=timezone.utc)
 
 
 def _fromtimestamp(ts):
